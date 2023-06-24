@@ -1,3 +1,8 @@
+// Paso 4 - Noticias
+
+// Dentro de la carpeta src/features/news, encontraremos el archivo Noticias.tsx. Allí, se encuentra toda la lógica de esta sección. Para poder resolver esta consigna, es importante poder abstraernos un poco de la creación de la UI, y del HTML, para pensar en que funcionalidades pueden ser generalizadas y extraídas del componente en particular. Por ejemplo, una función que agrega mayúsculas a un string, es algo que puede ser utilizado en cualquier lado (no solo en este componente), por lo que puede crearse una función utilitaria para realizar esta tarea cada vez que sea necesario. Recuerda además lo aprendido sobre los distintos principios SOLID al momento de pensar en las oportunidades de refactorización que se nos presentan en este caso.
+
+
 import { useEffect, useState } from "react";
 import { SuscribeImage, CloseButton as Close } from "../../assets";
 import { obtenerNoticias } from "./fakeRest";
