@@ -57,7 +57,7 @@ export const obtenerCitaDeLaAPI =
     dispatch(obtenerCitaAsync(personaje));
   };
 
-export const obtenerCitaDelEstado = (state: RootState) => state.cita.data;
-export const obtenerEstadoDelPedido = (state: RootState) => state.cita.estado;
+export const obtenerCitaDelEstado = (state: RootState) => state.quote.data;
+export const obtenerEstadoDelPedido = (state: RootState) => state.quote.estado;
 
 export default citaSlice.reducer;

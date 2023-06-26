@@ -3,7 +3,7 @@ import citaReducer from "../features/quote/citaSlice";
 
 export const store = configureStore({
   reducer: {
-    cita: citaReducer,
+    quote: citaReducer,
   },
 });
 
