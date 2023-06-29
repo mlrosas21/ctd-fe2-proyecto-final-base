@@ -1,6 +1,6 @@
 /** @jest-environment jsdom */
 import { fireEvent, screen, waitFor } from "@testing-library/react";
-import { generateHandlers } from "../../mocks/quote";
+import { generateHandlers } from "../../mocks/handler";
 import { setupServer } from "msw/node";
 import userEvent from "@testing-library/user-event";
 import { render } from "../../test-utils";
@@ -18,8 +18,8 @@ describe("Cita", () => {
   describe("Cuando la query se esta ejecutando", () => {
     it("debería renderizar correctamente el mensaje de cargando", async () => {
       render(<Cita />);
-      const button = screen.getByLabelText(/Obtener cita aleatoria/i);
-      
+      const button = screen.getByLabelText(/obtener cita aleatoria/i);
+
       userEvent.click(button);
       await waitFor(() => {
         const loading = screen.getByText(MENSAJE_CARGANDO);
@@ -46,7 +46,7 @@ describe("Cita", () => {
     it("Debería mostrar el botón 'Obtener cita' en lugar de 'Obtener cita aleatoria'", async () => {
       render(<Cita />);
       const input = screen.getByRole("textbox");
-      
+
       userEvent.type(input, "Homer");
       await waitFor(() => {
         const buttonCita = screen.getByLabelText(/obtener cita/i);
@@ -59,9 +59,21 @@ describe("Cita", () => {
         expect(buttonCitaAleatoria).not.toBeInTheDocument();
       });
     });
+
+    it("debería renderizar una cita del Simpson ingresado", async () => {
+      render(<Cita />);
+      const input = screen.getByRole("textbox");
+      fireEvent.change(input, { target: { value: "Troy" } });
+      const buttonCita = screen.getByLabelText(/obtener cita/i);
+      userEvent.click(buttonCita);
+      await waitFor(() => {
+        const author = screen.getByTestId("author");
+        expect(author).toHaveTextContent("Troy McClure");
+      });
+    });
   });
 
-    describe("Cuando presionamos el botón de borrar", () => {
+  describe("Cuando presionamos el botón de borrar", () => {
     it("Debería limpiar el input de personaje", async () => {
       render(<Cita />);
       const input = screen.getByRole("textbox");
