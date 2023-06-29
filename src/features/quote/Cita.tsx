@@ -10,6 +10,10 @@ import {
 } from "./citaSlice";
 import { obtenerMensaje } from "./utils";
 
+/**
+ * Componente Cita que muestra una cita aleatoria o una cita específica de un autor.
+ * @returns {JSX.Element} El componente Cita renderizado.
+ */
 function Cita() {
   const [valorInput, setValorInput] = useState("");
   const { cita = "", personaje = "" } =

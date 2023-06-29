@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { NombresSimpsons, INFO_SIMPSONS } from "./constants";
-import styles from "./styles.module.css";
 import {
   BioButton,
   BioButtonWrapper,
@@ -10,6 +9,10 @@ import {
   BioWrapper,
 } from "./Bio.styled";
 
+/**
+ * Componente Bio que muestra información biográfica de personajes de Los Simpsons.
+ * @returns {JSX.Element} El componente Bio renderizado.
+ */
 const Bio = () => {
   const [bioActiva, setBioActiva] = useState(
     INFO_SIMPSONS[NombresSimpsons.BART]

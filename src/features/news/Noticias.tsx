@@ -4,6 +4,10 @@ import { useModal } from "../../hooks/useModal";
 import { INoticiasNormalizadas } from "./types";
 import { useNoticias } from "../../hooks/useNoticias";
 
+/**
+ * Componente Noticias que muestra una lista de noticias de los Simpsons.
+ * @returns {JSX.Element} El componente Noticias renderizado.
+ */
 const Noticias = () => {
   const { modal, openModal, closeModal } = useModal<INoticiasNormalizadas>();
   const [noticias, isLoading] = useNoticias();

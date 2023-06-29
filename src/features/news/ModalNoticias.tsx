@@ -11,6 +11,12 @@ import {
 } from "./styled";
 import { IModalNoticiasProps } from "./types";
 
+/**
+ * Componente ModalNoticias que muestra un modal con detalles de una noticia.
+ * @param {IModalNoticiasProps} modal - Los detalles de la noticia a mostrar en el modal.
+ * @param {Function} closeModal - La función para cerrar el modal.
+ * @returns {JSX.Element} El componente ModalNoticias renderizado.
+ */
 const ModalNoticias = ({ modal, closeModal }: IModalNoticiasProps) => {
   const handleSuscribirClick = () => {
     setTimeout(() => {
