@@ -32,7 +32,7 @@ function Cita() {
   return (
     <ContenedorCita>
       <TextoCita>{obtenerMensaje(cita, estadoPedido)}</TextoCita>
-      <AutorCita>{personaje}</AutorCita>
+      <AutorCita data-testid="author">{personaje}</AutorCita>
       <Input
         aria-label="Author Cita"
         value={valorInput}
